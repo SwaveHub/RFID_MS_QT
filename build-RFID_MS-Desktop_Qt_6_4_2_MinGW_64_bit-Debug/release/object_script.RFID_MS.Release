@@ -1,0 +1,12 @@
+release/admin.o
+release/login.o
+release/main.o
+release/mainwindow.o
+release/record.o
+release/protocol.o
+release/sqlmgr.o
+release/qrc_res.o
+release/moc_admin.o
+release/moc_login.o
+release/moc_mainwindow.o
+release/moc_record.o
