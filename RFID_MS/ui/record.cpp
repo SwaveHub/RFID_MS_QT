@@ -43,7 +43,7 @@ void record::on_btn_confirm_clicked()
     QString condition = ui->ed_search->text(); //获取搜索框中内容
 
     QVector<QStringList> vec;   //保存返回的所有结果
-    vec = SqlMgr::getInstance()->getRecord(QString("WHERE item LIKE '%%1%'").arg(condition));
+    vec = SqlMgr::getInstance()->getRecord(QString("WHERE item LIKE '%%1%' OR shelf = '%2'").arg(condition, condition));
     QVector<QStringList>::iterator iter;
 
     recordModel.removeRows(0, recordModel.rowCount());  //清空所有行
@@ -75,7 +75,7 @@ void record::on_ed_search_returnPressed()
     QString condition = ui->ed_search->text(); //获取搜索框中内容
 
     QVector<QStringList> vec;   //保存返回的所有结果
-    vec = SqlMgr::getInstance()->getRecord(QString("WHERE item LIKE '%%1%'").arg(condition));
+    vec = SqlMgr::getInstance()->getRecord(QString("WHERE item LIKE '%%1%' OR shelf = '%2'").arg(condition, condition));
     QVector<QStringList>::iterator iter;
 
     recordModel.removeRows(0, recordModel.rowCount());  //清空所有行

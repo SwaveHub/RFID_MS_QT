@@ -15,3 +15,5 @@ DISTFILES +=
 
 RESOURCES += \
     res/res.qrc
+
+RC_ICONS = RFID_MS.ico
