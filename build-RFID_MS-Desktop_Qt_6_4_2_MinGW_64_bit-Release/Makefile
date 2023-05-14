@@ -350,6 +350,7 @@ Makefile: ../RFID_MS/RFID_MS.pro F:/Qt/6.4.2/mingw_64/mkspecs/win32-g++/qmake.co
 		F:/Qt/6.4.2/mingw_64/lib/Qt6Core.prl \
 		F:/Qt/6.4.2/mingw_64/lib/Qt6EntryPoint.prl \
 		F:/Qt/6.4.2/mingw_64/mkspecs/features/build_pass.prf \
+		../RFID_MS/res/qss.qrc \
 		../RFID_MS/res/res.qrc
 	$(QMAKE) -o Makefile ..\RFID_MS\RFID_MS.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 F:/Qt/6.4.2/mingw_64/mkspecs/features/spec_pre.prf:
@@ -632,6 +633,7 @@ F:/Qt/6.4.2/mingw_64/lib/Qt6SerialPort.prl:
 F:/Qt/6.4.2/mingw_64/lib/Qt6Core.prl:
 F:/Qt/6.4.2/mingw_64/lib/Qt6EntryPoint.prl:
 F:/Qt/6.4.2/mingw_64/mkspecs/features/build_pass.prf:
+../RFID_MS/res/qss.qrc:
 ../RFID_MS/res/res.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\RFID_MS\RFID_MS.pro -spec win32-g++ "CONFIG+=qtquickcompiler"

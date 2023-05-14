@@ -5,6 +5,7 @@ release/mainwindow.o
 release/record.o
 release/protocol.o
 release/sqlmgr.o
+release/qrc_qss.o
 release/qrc_res.o
 release/moc_admin.o
 release/moc_login.o

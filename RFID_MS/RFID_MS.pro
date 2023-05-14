@@ -14,6 +14,7 @@ include($$PWD/lib/lib.pri)
 DISTFILES +=
 
 RESOURCES += \
+    res/qss.qrc \
     res/res.qrc
 
 RC_ICONS = RFID_MS.ico

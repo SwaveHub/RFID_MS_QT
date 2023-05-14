@@ -5,6 +5,7 @@ debug/mainwindow.o
 debug/record.o
 debug/protocol.o
 debug/sqlmgr.o
+debug/qrc_qss.o
 debug/qrc_res.o
 debug/moc_admin.o
 debug/moc_login.o
