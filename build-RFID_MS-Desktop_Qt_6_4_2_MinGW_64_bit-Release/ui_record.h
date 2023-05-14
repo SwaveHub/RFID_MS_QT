@@ -29,10 +29,11 @@ public:
     QLabel *lb_title;
     QWidget *widget;
     QGridLayout *gridLayout;
-    QLabel *label;
     QLineEdit *ed_search;
     QPushButton *btn_confirm;
+    QLabel *label;
     QSpacerItem *horizontalSpacer;
+    QLabel *label_sum;
     QTableView *tb_record;
 
     void setupUi(QWidget *record)
@@ -55,11 +56,6 @@ public:
         widget->setObjectName("widget");
         gridLayout = new QGridLayout(widget);
         gridLayout->setObjectName("gridLayout");
-        label = new QLabel(widget);
-        label->setObjectName("label");
-
-        gridLayout->addWidget(label, 0, 0, 1, 1);
-
         ed_search = new QLineEdit(widget);
         ed_search->setObjectName("ed_search");
 
@@ -70,9 +66,19 @@ public:
 
         gridLayout->addWidget(btn_confirm, 0, 2, 1, 1);
 
+        label = new QLabel(widget);
+        label->setObjectName("label");
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
         horizontalSpacer = new QSpacerItem(259, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer, 0, 3, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 0, 4, 1, 1);
+
+        label_sum = new QLabel(widget);
+        label_sum->setObjectName("label_sum");
+
+        gridLayout->addWidget(label_sum, 0, 3, 1, 1);
 
 
         gridLayout_2->addWidget(widget, 1, 0, 1, 1);
@@ -92,8 +98,9 @@ public:
     {
         record->setWindowTitle(QCoreApplication::translate("record", "Form", nullptr));
         lb_title->setText(QCoreApplication::translate("record", "\350\264\247\347\211\251\344\277\241\346\201\257\346\237\245\350\257\242", nullptr));
-        label->setText(QCoreApplication::translate("record", "\346\220\234\347\264\242", nullptr));
         btn_confirm->setText(QCoreApplication::translate("record", "\347\241\256\350\256\244", nullptr));
+        label->setText(QCoreApplication::translate("record", "\346\220\234\347\264\242", nullptr));
+        label_sum->setText(QCoreApplication::translate("record", "\346\220\234\347\264\242\347\273\223\346\236\234\357\274\232", nullptr));
     } // retranslateUi
 
 };

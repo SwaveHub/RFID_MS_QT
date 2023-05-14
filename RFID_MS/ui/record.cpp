@@ -67,6 +67,7 @@ void record::on_btn_confirm_clicked()
             recordModel.appendRow(items);
         }
     }
+    ui->label_sum->setText(QString("搜索结果：%1").arg(i-1));
 }
 
 
@@ -99,5 +100,6 @@ void record::on_ed_search_returnPressed()
             recordModel.appendRow(items);
         }
     }
+    ui->label_sum->setText(QString("搜索结果：%1").arg(i-1));
 }
 
