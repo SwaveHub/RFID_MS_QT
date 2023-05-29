@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	"E:\\QtDocs\\RFID_MS\\RFID_MS\\RFID_MS.ico"
+IDI_ICON1	ICON	"I:\\毕设\\代码工程\\qt\\RFID_MS\\RFID_MS\\RFID_MS.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

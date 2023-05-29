@@ -54,7 +54,6 @@ void record::on_btn_confirm_clicked()
         qDebug() << QString("QStringList%1:").arg(i) << *iter;
         qDebug() << QString("QStringList%1的长度:").arg(i) << iter->size();
         qDebug() << QString("QStringList%1中的QString:").arg(i) <<(*iter).at(0).toLocal8Bit().constData();
-        i++;
         if (login::isPermit((*iter).at(2).toInt()))
         {
             QList<QStandardItem*> items;
@@ -65,6 +64,7 @@ void record::on_btn_confirm_clicked()
             items.append(new QStandardItem(QString("%1").arg((*iter).at(5))));
             items.append(new QStandardItem(QString("%1").arg((*iter).at(6))));
             recordModel.appendRow(items);
+            i++;
         }
     }
     ui->label_sum->setText(QString("搜索结果：%1").arg(i-1));
@@ -87,7 +87,6 @@ void record::on_ed_search_returnPressed()
         qDebug() << QString("QStringList%1:").arg(i) << *iter;
         qDebug() << QString("QStringList%1的长度:").arg(i) << iter->size();
         qDebug() << QString("QStringList%1中的QString:").arg(i) <<(*iter).at(0).toLocal8Bit().constData();
-        i++;
         if (login::isPermit((*iter).at(2).toInt()))
         {
             QList<QStandardItem*> items;
@@ -98,6 +97,7 @@ void record::on_ed_search_returnPressed()
             items.append(new QStandardItem(QString("%1").arg((*iter).at(5))));
             items.append(new QStandardItem(QString("%1").arg((*iter).at(6))));
             recordModel.appendRow(items);
+            i++;
         }
     }
     ui->label_sum->setText(QString("搜索结果：%1").arg(i-1));
