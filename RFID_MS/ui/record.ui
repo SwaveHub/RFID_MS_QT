@@ -32,16 +32,23 @@
      </property>
     </widget>
    </item>
+   <item row="2" column="0">
+    <widget class="QTableView" name="tb_record"/>
+   </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="ed_search"/>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="btn_confirm">
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="cbox_out">
         <property name="text">
-         <string>确认</string>
+         <string>显示已出库</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_sum">
+        <property name="text">
+         <string>搜索结果：</string>
         </property>
        </widget>
       </item>
@@ -51,6 +58,16 @@
          <string>搜索</string>
         </property>
        </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="cbox_in">
+        <property name="text">
+         <string>显示未出库</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="ed_search"/>
       </item>
       <item row="0" column="4">
        <spacer name="horizontalSpacer">
@@ -65,18 +82,15 @@
         </property>
        </spacer>
       </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label_sum">
+      <item row="0" column="2">
+       <widget class="QPushButton" name="btn_confirm">
         <property name="text">
-         <string>搜索结果：</string>
+         <string>确认</string>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QTableView" name="tb_record"/>
    </item>
   </layout>
  </widget>

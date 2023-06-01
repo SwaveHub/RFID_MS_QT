@@ -40,6 +40,10 @@ record::~record()
 
 void record::on_btn_confirm_clicked()
 {
+    //获取checkbox的状态
+    bool cbox_in_isChecked = ui->cbox_in->isChecked();
+    bool cbox_out_isChecked = ui->cbox_out->isChecked();
+
     QString condition = ui->ed_search->text(); //获取搜索框中内容
 
     QVector<QStringList> vec;   //保存返回的所有结果
@@ -56,15 +60,24 @@ void record::on_btn_confirm_clicked()
         qDebug() << QString("QStringList%1中的QString:").arg(i) <<(*iter).at(0).toLocal8Bit().constData();
         if (login::isPermit((*iter).at(2).toInt()))
         {
-            QList<QStandardItem*> items;
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(1))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(2))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(3))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(4))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(5))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(6))));
-            recordModel.appendRow(items);
-            i++;
+//            if (cbox_in_isChecked == true && (*iter).at(6) == "NULL")  //显示未出库结果
+//            {
+//            }
+//            else if (cbox_out_isChecked == true && (*iter).at(6) != "NULL")    //显示已出库结果
+//            {
+//            }
+            if ((cbox_in_isChecked == true && (*iter).at(6) == "NULL") || (cbox_out_isChecked == true && (*iter).at(6) != "NULL"))
+            {
+                QList<QStandardItem*> items;
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(1))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(2))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(3))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(4))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(5))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(6))));
+                recordModel.appendRow(items);
+                i++;
+            }
         }
     }
     ui->label_sum->setText(QString("搜索结果：%1").arg(i-1));
@@ -73,6 +86,10 @@ void record::on_btn_confirm_clicked()
 
 void record::on_ed_search_returnPressed()
 {
+    //获取checkbox的状态
+    bool cbox_in_isChecked = ui->cbox_in->isChecked();
+    bool cbox_out_isChecked = ui->cbox_out->isChecked();
+
     QString condition = ui->ed_search->text(); //获取搜索框中内容
 
     QVector<QStringList> vec;   //保存返回的所有结果
@@ -89,15 +106,24 @@ void record::on_ed_search_returnPressed()
         qDebug() << QString("QStringList%1中的QString:").arg(i) <<(*iter).at(0).toLocal8Bit().constData();
         if (login::isPermit((*iter).at(2).toInt()))
         {
-            QList<QStandardItem*> items;
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(1))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(2))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(3))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(4))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(5))));
-            items.append(new QStandardItem(QString("%1").arg((*iter).at(6))));
-            recordModel.appendRow(items);
-            i++;
+//            if (cbox_in_isChecked == true && (*iter).at(6) == "NULL")  //显示未出库结果
+//            {
+//            }
+//            else if (cbox_out_isChecked == true && (*iter).at(6) != "NULL")    //显示已出库结果
+//            {
+//            }
+            if ((cbox_in_isChecked == true && (*iter).at(6) == "NULL") || (cbox_out_isChecked == true && (*iter).at(6) != "NULL"))
+            {
+                QList<QStandardItem*> items;
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(1))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(2))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(3))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(4))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(5))));
+                items.append(new QStandardItem(QString("%1").arg((*iter).at(6))));
+                recordModel.appendRow(items);
+                i++;
+            }
         }
     }
     ui->label_sum->setText(QString("搜索结果：%1").arg(i-1));
