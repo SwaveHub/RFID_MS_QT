@@ -17,6 +17,9 @@ record::record(QWidget *parent) :
     // 设置最小的宽度
     ui->tb_record->horizontalHeader()->setMinimumSectionSize(75);
     recordModel.setHorizontalHeaderLabels(QStringList{"名称","货架号","层号","TID","入库时间","出库时间"});
+    // 设置checkbox默认状态
+    ui->cbox_in->setChecked(1);
+    ui->cbox_out->setChecked(0);
 
 #if 0
     for(int i = 0; i < 10; i++)
